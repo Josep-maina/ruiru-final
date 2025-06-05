@@ -1,3 +1,3 @@
-git add go.mod go.sum
-git commit -m "Initialize Go module"
-git push
+module github.com/Josep-maina/ruiru-final
+
+go 1.20
