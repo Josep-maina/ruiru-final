@@ -1,0 +1,594 @@
+/* 
+   Ruiru Technical and Vocational College
+   Main Stylesheet
+   Colors: Green (#198754 - Bootstrap success) and Yellow (#ffc107 - Bootstrap warning)
+*/
+
+/* General Styles */
+:root {
+  --rtvc-green: #198754;
+  --rtvc-yellow: #ffc107;
+  --rtvc-dark-green: #0f5132;
+  --rtvc-light-yellow: #fff3cd;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+main {
+  padding-top: 56px; /* For fixed navbar */
+}
+
+.section-title {
+  color: var(--rtvc-dark-green);
+  margin-bottom: 1.5rem;
+  position: relative;
+  font-weight: 700;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 3px;
+  background-color: var(--rtvc-yellow);
+  margin-top: 10px;
+}
+
+.text-center .section-title::after {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Header Styles */
+.navbar {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  height: 40px;
+  width: auto;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link:focus {
+  color: var(--rtvc-yellow);
+}
+
+.navbar-dark .navbar-nav .active > .nav-link,
+.navbar-dark .navbar-nav .nav-link.active {
+  color: var(--rtvc-yellow);
+}
+
+.dropdown-menu {
+  border-radius: 0;
+  border-top: 3px solid var(--rtvc-yellow);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+  background-color: var(--rtvc-light-yellow);
+  color: var(--rtvc-dark-green);
+}
+
+/* Hero Section Styles */
+#hero {
+  margin-top: -56px; /* To offset the fixed navbar */
+  height: 100vh;
+  min-height: 500px;
+}
+
+.carousel-item {
+  height: 100vh;
+  min-height: 500px;
+  background-color: #000;
+}
+
+.carousel-item img {
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.7;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.carousel-caption {
+  bottom: auto;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  max-width: 80%;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+}
+
+.carousel-caption h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.carousel-caption .tagline {
+  font-style: italic;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.carousel-caption h2 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* About Page Specific Styles */
+.about-hero,
+.department-hero {
+  position: relative;
+  margin-top: 0; /* Remove the margin to fix the gap */
+  height: 60vh;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero-bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(25, 135, 84, 0.8), rgba(15, 81, 50, 0.9));
+  z-index: 2;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  padding-top: 56px; /* Add padding to account for the fixed navbar */
+}
+
+.hero-breadcrumb .breadcrumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 25px;
+  padding: 0.5rem 1rem;
+  backdrop-filter: blur(10px);
+}
+
+.hero-breadcrumb .breadcrumb-item + .breadcrumb-item::before {
+  content: ">";
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.hero-breadcrumb .breadcrumb-item a {
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.hero-breadcrumb .breadcrumb-item a:hover {
+  color: #fff !important;
+}
+
+.min-vh-50 {
+  min-height: 50vh;
+}
+
+/* Department Page Specific Styles */
+.stat-box {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 1rem;
+  border-left: 3px solid var(--rtvc-yellow);
+}
+
+.hod-photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--rtvc-yellow);
+  margin: 0 auto;
+  display: block;
+}
+
+.facility-card {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+  height: 100%;
+}
+
+.facility-card:hover {
+  transform: translateY(-5px);
+}
+
+.career-card {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+  height: 100%;
+  border-left: 3px solid var(--rtvc-yellow);
+}
+
+.career-card:hover {
+  transform: translateY(-3px);
+}
+
+.vision-mission-card {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+  border-top: 3px solid var(--rtvc-yellow);
+}
+
+.vision-mission-card:hover {
+  transform: translateY(-5px);
+}
+
+.value-card {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+  margin-bottom: 1rem;
+}
+
+.value-card:hover {
+  transform: translateY(-3px);
+}
+
+/* Custom grid for 5 columns */
+.col-lg-2-4 {
+  flex: 0 0 auto;
+  width: 20%;
+}
+
+@media (max-width: 991.98px) {
+  .col-lg-2-4 {
+    width: 50%;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .col-lg-2-4 {
+    width: 100%;
+  }
+}
+
+.history-content {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.admin-card {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.admin-card:hover {
+  transform: translateY(-5px);
+}
+
+.admin-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--rtvc-yellow);
+  margin: 0 auto;
+  display: block;
+}
+
+/* Source Title Styling */
+.source-title {
+  color: var(--rtvc-yellow);
+  font-weight: 600;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.blockquote-footer {
+  color: #444;
+}
+
+/* Stats Section */
+.stat-item {
+  padding: 1rem;
+}
+
+.stat-item h3 {
+  color: var(--rtvc-yellow);
+  margin-bottom: 0.5rem;
+}
+
+/* Discover Section Styles */
+.feature-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 1.5rem;
+}
+
+.feature-list li {
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+}
+
+.feature-list li i {
+  margin-right: 10px;
+  color: var(--rtvc-green);
+}
+
+/* Why Choose Section Styles */
+.feature-card {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.icon-wrapper {
+  margin-bottom: 1.25rem;
+  color: var(--rtvc-green);
+}
+
+.feature-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: var(--rtvc-dark-green);
+}
+
+/* Departments Section Styles */
+.department-card {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+  border-top: 3px solid var(--rtvc-yellow);
+}
+
+.department-card:hover {
+  transform: translateY(-5px);
+}
+
+.department-card h3 {
+  font-size: 1.2rem;
+  margin: 1rem 0;
+  color: var(--rtvc-dark-green);
+}
+
+.department-card p {
+  margin-bottom: 1.25rem;
+}
+
+/* News Section */
+.news-card {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.news-card:hover {
+  transform: translateY(-5px);
+}
+
+.news-card img {
+  height: 200px;
+  object-fit: cover;
+}
+
+.news-card .card-body {
+  padding: 1.5rem;
+}
+
+.news-card h5 {
+  color: var(--rtvc-dark-green);
+  margin-bottom: 0.5rem;
+}
+
+/* Contact Section Styles */
+.contact-card {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+}
+
+.contact-card h3 {
+  font-size: 1.25rem;
+  margin: 1rem 0;
+  color: var(--rtvc-dark-green);
+}
+
+.contact-card a {
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.contact-card a:hover {
+  color: var(--rtvc-green);
+}
+
+/* Back to Top Button */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background-color: var(--rtvc-green);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.back-to-top:hover {
+  background-color: var(--rtvc-dark-green);
+  transform: translateY(-3px);
+}
+
+.back-to-top.show {
+  display: flex;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #212529;
+}
+
+.footer-links li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: var(--rtvc-yellow);
+  text-decoration: none;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.social-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  text-decoration: none !important;
+}
+
+.social-icons a:hover {
+  background-color: var(--rtvc-yellow);
+  color: #212529;
+  transform: translateY(-3px);
+  text-decoration: none !important;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767.98px) {
+  .carousel-caption h1 {
+    font-size: 1.8rem;
+  }
+
+  .carousel-caption h2 {
+    font-size: 1.2rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .admin-photo {
+    width: 120px;
+    height: 120px;
+  }
+
+  .hod-photo {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .carousel-caption h1 {
+    font-size: 1.5rem;
+  }
+
+  .carousel-caption h2 {
+    font-size: 1rem;
+  }
+
+  .carousel-caption .btn {
+    font-size: 0.875rem;
+    padding: 0.375rem 0.75rem;
+  }
+
+  .admin-photo {
+    width: 100px;
+    height: 100px;
+  }
+
+  .hod-photo {
+    width: 120px;
+    height: 120px;
+  }
+}
