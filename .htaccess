@@ -6,4 +6,3 @@ RewriteRule ^([^/]+)$ $1.php [L]
 
 # Block direct access to folders
 RedirectMatch 403 ^/config/
-RedirectMatch 403 ^/admin/
