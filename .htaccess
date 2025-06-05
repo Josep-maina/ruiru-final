@@ -1,8 +1,9 @@
 RewriteEngine On
 
-# Redirect if .php exists
-RewriteCond %{REQUEST_FILENAME}.php -f
+# Hide .php extensions
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
 RewriteRule ^([^/]+)$ $1.php [L]
 
-# Block direct access to folders
-RedirectMatch 403 ^/config/
+# Block access to config and admin folders
+RewriteRule ^(config)/ - [F,L]
