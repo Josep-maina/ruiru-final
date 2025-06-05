@@ -1,1 +1,2 @@
 This is a test file to make sure img/ is tracked by Git.
+git push -u origin main
