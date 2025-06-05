@@ -1,29 +1,9 @@
-# Enable rewrite engine
 RewriteEngine On
 
-# 1. Hide .php extension from URLs
-# If the requested file or directory exists, do nothing
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-# If appending .php to the requested URL leads to a valid file, rewrite URL to add .php
+# Redirect if .php exists
 RewriteCond %{REQUEST_FILENAME}.php -f
-RewriteRule ^(.*)$ $1.php [L]
+RewriteRule ^([^/]+)$ $1.php [L]
 
-# 2. Block public access to admin folder
-<Directory "/admin">
-    Order allow,deny
-    Deny from all
-</Directory>
-
-# Alternatively (if <Directory> not allowed), use this for admin folder:
-RewriteRule ^admin/ - [F,L]
-
-# 3. Block public access to db connect/config folder
-# Replace 'config' with your folder name if different
-RewriteRule ^config/ - [F,L]
-
-# Optional: deny access to files like config.php or dbconnect.php in root or anywhere
-<FilesMatch "(dbconnect|config)\.php$">
-    Order allow,deny
-    Deny from all
-</FilesMatch>
+# Block direct access to folders
+RedirectMatch 403 ^/config/
+RedirectMatch 403 ^/admin/
